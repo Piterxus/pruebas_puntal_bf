@@ -1,0 +1,70 @@
+# Node.js
+node_modules/
+
+# Angular
+# /dist/
+/e2e/*.log
+/e2e/*.screenshots
+/e2e/videos/
+
+# Laravel
+/vendor/
+/storage/
+.env
+Homestead.json
+Homestead.yaml
+npm-debug.log
+
+# IDEs and Editors
+.idea/
+.vscode/
+
+# Compiled files
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.class
+*.jar
+*.war
+*.ear
+*.db
+*.sqlite
+*.sql
+*.gz
+*.gzip
+*.zip
+*.rar
+*.tar
+*.7z
+*.bmp
+*.gif
+*.ico
+*.jpeg
+*.jpg
+*.png
+*.tif
+*.tiff
+*.webp
+*.avi
+*.mov
+*.mp4
+*.mpeg
+*.mpg
+*.mkv
+*.webm
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.aac
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
