@@ -160,7 +160,33 @@ export class FormularioEmbarcacionComponent implements OnInit {
       );
   }
   actualizarEmbarcacion() {
-    console.log('Actualizando embarcación:', this.embarcacionSeleccionada)
+    // console.log('Actualizando embarcación:', this.embarcacionSeleccionada)
+    // const formulario = document.forms.namedItem("formEmbarcacionModificar") as HTMLFormElement;
+    // // Accede a los valores del formulario usando document.forms['nombreFormulario']['nombreCampo']
+    // const nombreValue = formulario['Nombre'].value as HTMLInputElement;
+    // const matriculaValue = formulario['Matricula'].value as HTMLInputElement;
+    // const mangaValue = formulario['Manga'].value as HTMLInputElement;
+    // const esloraValue = formulario['Eslora'].value as HTMLInputElement;
+    // const origenValue = formulario['Origen'].value as HTMLInputElement;
+    // const titularValue = formulario['Titular'].value as HTMLInputElement;
+    // const imagenValue = formulario['Imagen'].value as HTMLInputElement;
+    // const numeroRegistroValue = formulario['Registro'].value as HTMLInputElement;
+    // const datosTecnicosValue = formulario['Datos_Tecnicos'].value as HTMLInputElement;
+    // const modeloValue = formulario['Modelo'].value as HTMLInputElement;
+    // const tipoValue = formulario['Tipo'].value as HTMLInputElement;
+    // this.embarcacionSeleccionada = {
+    //   Nombre: nombreValue,
+    //   Matricula: matriculaValue,
+    //   Manga: mangaValue,
+    //   Eslora: esloraValue,
+    //   Origen: origenValue,
+    //   Titular: titularValue,
+    //   Imagen: imagenValue,
+    //   Numero_Registro: numeroRegistroValue,
+    //   Datos_Tecnicos: datosTecnicosValue,
+    //   Modelo: modeloValue,
+    //   Tipo: tipoValue
+    // };
     this.apiEmbarcacionesService.updateEmbarcacion(this.embarcacionSeleccionada.Matricula, this.embarcacionSeleccionada)
       .pipe(
         catchError(error => {

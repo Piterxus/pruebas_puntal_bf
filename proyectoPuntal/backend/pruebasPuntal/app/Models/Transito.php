@@ -15,8 +15,10 @@ class Transito extends Plaza
     protected $fillable = [
         'PlazaID',
         'FechaEntrada',
-        'FinContrato',
-        'DatosEstancia'
+        'GuardaMuellesID',
+        'FechaSalida',
+        'Patron',
+        'Proposito'
     ];
 
     public function embarcaciones(){
