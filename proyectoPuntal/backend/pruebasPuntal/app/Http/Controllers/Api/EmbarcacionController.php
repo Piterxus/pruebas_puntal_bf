@@ -115,37 +115,7 @@ class EmbarcacionController extends Controller
 
 
 
-    // public function destroy(Embarcacion $embarcacion)
-    // {
-    //     $embarcacion->delete();
-    //     return response()->json(null, 204);
-    // }
-    // public function destroy(Embarcacion $embarcacion)
-    // {
-    //     try {
-    //         // Verifica si la embarcación existe
-    //         if (!$embarcacion) {
-    //             return response()->json(['error' => 'Embarcación no encontrada'], 404);
-    //         }
 
-    //         // Elimina la embarcación
-    //         $deleteResult = $embarcacion->delete();
-
-    //         // Verifica si la eliminación fue exitosa
-    //         if ($deleteResult) {
-    //             // Loguea la información de la embarcación eliminada
-    //             Log::info('Embarcación eliminada', ['Matricula' => $embarcacion->Matricula]);
-
-    //             return response()->json(['message' => 'Embarcación eliminada exitosamente'], 200);
-    //         } else {
-    //             return response()->json(['error' => 'Error al eliminar la embarcación'], 500);
-    //         }
-    //     } catch (\Exception $e) {
-    //         // Manejo de errores
-    //         Log::error('Error durante la eliminación de la embarcación: ' . $e->getMessage());
-    //         return response()->json(['error' => 'Error interno del servidor'], 500);
-    //     }
-    // }
     public function destroy($matricula)
     {
         try {
