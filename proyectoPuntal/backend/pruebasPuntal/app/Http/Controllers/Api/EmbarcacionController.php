@@ -113,63 +113,49 @@ class EmbarcacionController extends Controller
     }
 
 
-    // public function update(Request $request, Embarcacion $embarcacion)
+
+
+    // public function destroy(Embarcacion $embarcacion)
     // {
-    //     DB::enableQueryLog();
+    //     $embarcacion->delete();
+    //     return response()->json(null, 204);
+    // }
+    // public function destroy(Embarcacion $embarcacion)
+    // {
     //     try {
     //         // Verifica si la embarcación existe
     //         if (!$embarcacion) {
     //             return response()->json(['error' => 'Embarcación no encontrada'], 404);
     //         }
-    //         Log::info('URL de la solicitud:', ['URL' => $request->url()]);
-    //         Log::info('Embarcación recibida:', ['Embarcación Request' => $request->Matricula]);
-    //         Log::info('Embarcación recibida:', ['Embarcación' => $embarcacion]);
-    //         Log::info('Matrícula recibida:', ['Matricula' => $embarcacion->Matricula]);
-    //         Log::info('Datos de la solicitud en el controlador:', $request->all());
 
-    //         // Obtiene los datos actuales antes de la actualización
-    //         $oldData = $embarcacion->toArray();
-    //         Log::info('Datos antes de la actualización:', $oldData);
+    //         // Elimina la embarcación
+    //         $deleteResult = $embarcacion->delete();
 
-    //         // Actualiza la embarcación con los datos de la solicitud
-    //         // Log::info('Query Log:', \DB::getQueryLog());
+    //         // Verifica si la eliminación fue exitosa
+    //         if ($deleteResult) {
+    //             // Loguea la información de la embarcación eliminada
+    //             Log::info('Embarcación eliminada', ['Matricula' => $embarcacion->Matricula]);
 
-    //         Log::info('Datos de la solicitud Antes:', $request->all());
-
-    //         // $updateResult = $embarcacion->update($request->all());
-    //         $embarcacion->fill($request->all());
-    //         $updateResult = $embarcacion->save();
-
-    //         Log::info('Datos de la solicitud:', $request->all());
-
-    //         // Verifica si la actualización fue exitosa
-    //         if ($updateResult) {
-    //             // Obtiene los datos después de la actualización
-    //             $embarcacion = Embarcacion::find($request->Matricula);
-    //             $newData = $embarcacion->toArray();
-    //             Log::info('Datos después de la actualización:', $newData);
-
-    //             // Loguea la información antes y después de la actualización
-    //             Log::info('Embarcación actualizada', [
-    //                 'antes' => $oldData,
-    //                 'después' => $newData,
-    //             ]);
-
-    //             return response()->json($embarcacion, 200);
+    //             return response()->json(['message' => 'Embarcación eliminada exitosamente'], 200);
     //         } else {
-    //             return response()->json(['error' => 'Error al actualizar la embarcación'], 500);
+    //             return response()->json(['error' => 'Error al eliminar la embarcación'], 500);
     //         }
     //     } catch (\Exception $e) {
     //         // Manejo de errores
-    //         Log::error('Error durante la actualización de la embarcación: ' . $e->getMessage());
+    //         Log::error('Error durante la eliminación de la embarcación: ' . $e->getMessage());
     //         return response()->json(['error' => 'Error interno del servidor'], 500);
     //     }
     // }
-
-
-    public function destroy(Embarcacion $embarcacion)
+    public function destroy($matricula)
     {
-        $embarcacion->delete();
-        return response()->json(null, 204);
+        try {
+            $embarcacion = Embarcacion::findOrFail($matricula);
+            $embarcacion->delete();
+
+            return response()->json(['message' => 'Embarcación eliminada correctamente'], 200);
+        } catch (\Exception $e) {
+            // Manejo de errores
+            return response()->json(['error' => 'Error interno del servidor'], 500);
+        }
     }
 }

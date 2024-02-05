@@ -238,7 +238,7 @@
         <button
           *ngIf="!modoEdicion"
           class="btnDelete btn"
-          routerLink="../tabla"
+          (click)="eliminarEmbarcacion()"
         >
           ELIMINAR
         </button>
