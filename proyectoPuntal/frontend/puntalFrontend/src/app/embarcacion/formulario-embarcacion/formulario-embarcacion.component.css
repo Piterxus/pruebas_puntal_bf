@@ -24,55 +24,55 @@ input{
 
     
 }
-input[name='nombre']{
+input[name='Nombre']{
         background-image: url(/assets/img/embarcaciones/formIcon_user.svg);
             background-repeat: no-repeat;
             background-position: right;
             background-size: 30px;
 }
-input[name='matricula'] {
+input[name='Matricula'] {
     background-image: url(/assets/img/embarcaciones/formIcon_mat.svg);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 30px;
 }
-input[name='modelo'] {
+input[name='Modelo'] {
     background-image: url(/assets/img/embarcaciones/formIcon_modelo.svg);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 30px;
 }
-input[name='bandera'] {
+input[name='Origen'] {
     background-image: url(/assets/img/embarcaciones/formIcon_band.svg);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 30px;
 }
-input[name='titular'] {
+input[name='Titular'] {
     background-image: url(/assets/img/embarcaciones/formIcon_tit.svg);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 30px;
 }
-input[name='registro'] {
+input[name='Registro'] {
     background-image: url(/assets/img/embarcaciones/formIcon_reg.svg);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 30px;
 }
-input[name='eslora'], input[name="manga"] {
+input[name='Eslora'], input[name="manga"] {
     background-image: url(/assets/img/embarcaciones/formIcon_es.svg);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 30px;
 }
-input[name='tipo'] {
+input[name='Tipo'] {
     background-image: url(/assets/img/embarcaciones/formIcon_tip.svg);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 30px;
 }
-input[name='imgE'] {
+input[name='Imagen'] {
     background-image: url(/assets/img/embarcaciones/formIcon_img.svg);
     background-repeat: no-repeat;
     background-position: right;

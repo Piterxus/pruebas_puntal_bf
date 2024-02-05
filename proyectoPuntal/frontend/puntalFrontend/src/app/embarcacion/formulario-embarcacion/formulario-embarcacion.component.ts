@@ -95,20 +95,67 @@ export class FormularioEmbarcacionComponent implements OnInit {
   //       }
   //     );
   // }
+  // guardarEmbarcacion() {
+  //   console.log('Guardando embarcación:', this.embarcacionSeleccionada)
+  //   this.apiEmbarcacionesService.addEmbarcacion(this.embarcacionSeleccionada)
+  //     .pipe(
+  //       catchError(error => {
+  //         console.error('Error en la solicitud:', error);
+  //         console.log('Mensaje de error:', error.error);
+  //         // Puedes manejar el error según tus necesidades
+  //         throw error; // Propagar el error después de manejarlo
+  //       })
+  //     )
+  //     .subscribe(
+  //       response => {
+  //         console.log('Respuesta del servicio en el componente:', response);
+  //         this.formulario.reset();
+  //       }
+  //     );
+  // }
   guardarEmbarcacion() {
+    console.log('Guardando embarcación:', this.embarcacionSeleccionada);
+    const formulario = document.forms.namedItem("formEmbarcacion") as HTMLFormElement;
+    // Accede a los valores del formulario usando document.forms['nombreFormulario']['nombreCampo']
+    const nombreValue = formulario['Nombre'].value as HTMLInputElement;
+    const matriculaValue = formulario['Matricula'].value as HTMLInputElement;
+    const mangaValue = formulario['Manga'].value as HTMLInputElement;
+    const esloraValue = formulario['Eslora'].value as HTMLInputElement;
+    const origenValue = formulario['Origen'].value as HTMLInputElement;
+    const titularValue = formulario['Titular'].value as HTMLInputElement;
+    const imagenValue = formulario['Imagen'].value as HTMLInputElement;
+    const numeroRegistroValue = formulario['Registro'].value as HTMLInputElement;
+    const datosTecnicosValue = formulario['Datos_Tecnicos'].value as HTMLInputElement;
+    const modeloValue = formulario['Modelo'].value as HTMLInputElement;
+    const tipoValue = formulario['Tipo'].value as HTMLInputElement;
+    this.embarcacionSeleccionada = {
+      Nombre: nombreValue,
+      Matricula: matriculaValue,
+      Manga: mangaValue,
+      Eslora: esloraValue,
+      Origen: origenValue,
+      Titular: titularValue,
+      Imagen: imagenValue,
+      Numero_Registro: numeroRegistroValue,
+      Datos_Tecnicos: datosTecnicosValue,
+      Modelo: modeloValue,
+      Tipo: tipoValue
+    };
+    // ... y así sucesivamente para otros campos.
+
     this.apiEmbarcacionesService.addEmbarcacion(this.embarcacionSeleccionada)
       .pipe(
         catchError(error => {
           console.error('Error en la solicitud:', error);
           console.log('Mensaje de error:', error.error);
-          // Puedes manejar el error según tus necesidades
-          throw error; // Propagar el error después de manejarlo
+          throw error;
         })
       )
       .subscribe(
         response => {
           console.log('Respuesta del servicio en el componente:', response);
-          this.formulario.reset();
+          // Puedes realizar acciones adicionales después de la inserción
+          // this.resetearFormulario();
         }
       );
   }
