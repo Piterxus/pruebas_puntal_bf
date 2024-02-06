@@ -44,7 +44,7 @@ export class TablaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.apiEmbarcacionesService.getEmbarcaciones().subscribe((data: any) => {
+    this.apiEmbarcacionesService.getAll('embarcaciones').subscribe((data: any) => {
       this.datos = data;
 
       console.log('Después de la llamada a la API:', this.datos);

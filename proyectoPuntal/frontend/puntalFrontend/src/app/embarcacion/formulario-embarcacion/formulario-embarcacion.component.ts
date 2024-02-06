@@ -100,7 +100,7 @@ export class FormularioEmbarcacionComponent implements OnInit {
     };
     // ... y así sucesivamente para otros campos.
 
-    this.apiEmbarcacionesService.addEmbarcacion(this.embarcacionSeleccionada)
+    this.apiEmbarcacionesService.add('embarcaciones', this.embarcacionSeleccionada)
       .pipe(
         catchError(error => {
           console.error('Error en la solicitud:', error);
@@ -117,7 +117,7 @@ export class FormularioEmbarcacionComponent implements OnInit {
   }
   actualizarEmbarcacion() {
  
-    this.apiEmbarcacionesService.updateEmbarcacion(this.embarcacionSeleccionada.Matricula, this.embarcacionSeleccionada)
+    this.apiEmbarcacionesService.update(this.embarcacionSeleccionada.Matricula,'embarcaciones', this.embarcacionSeleccionada)
       .pipe(
         catchError(error => {
           console.error('Error en la solicitud:', error);
@@ -137,7 +137,7 @@ export class FormularioEmbarcacionComponent implements OnInit {
       );
   }
   eliminarEmbarcacion() {
-    this.apiEmbarcacionesService.deleteEmbarcacion(this.embarcacionSeleccionada.Matricula)
+    this.apiEmbarcacionesService.delete(this.embarcacionSeleccionada.Matricula, 'embarcaciones')
       .pipe(
         catchError(error => {
           console.error('Error en la solicitud:', error);

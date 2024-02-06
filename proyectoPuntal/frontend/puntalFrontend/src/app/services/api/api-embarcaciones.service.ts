@@ -7,30 +7,32 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiEmbarcacionesService {
-  private apiUrl = 'http://127.0.0.1:8000/api/embarcaciones';
+  private apiUrl = 'http://127.0.0.1:8000/api/';
   constructor(private http: HttpClient) { }
-  getEmbarcaciones(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  getAll(entity: string): Observable<any> {
+    const url = `${this.apiUrl}${entity}`;
+    return this.http.get(url);
   }
-  addEmbarcacion(embarcacionData: any): Observable<any> {
-    return this.http.post(this.apiUrl, embarcacionData)
+  add(entity: string, data:any): Observable<any> {
+    const url = `${this.apiUrl}${entity}`;
+    return this.http.post(url, data)
       .pipe(
         tap(response => console.log('Respuesta del servicio:', response))
       );
   }
 
-  updateEmbarcacion(id: string, embarcacionData: any): Observable<any> {
+  update(id: any, entity: string, data:any): Observable<any> {
 
     
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrl}${entity}/${id}`;
     console.log('URL:', url);
-    console.log('Datos de la embarcación a enviar:', embarcacionData);
+    console.log('Datos de la embarcación a enviar:', entity);
     // return this.http.put(url, JSON.stringify(embarcacionData), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) });
-    return this.http.put(url, embarcacionData, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) });
+    return this.http.put(url, data, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) });
   }
 
-  deleteEmbarcacion(id: number): Observable<any> {
-    const url = `${this.apiUrl}/${id}`;
+  delete(id: any, entity:string): Observable<any> {
+    const url = `${this.apiUrl}${entity}/${id}`;
     return this.http.delete(url);
   }
 }
