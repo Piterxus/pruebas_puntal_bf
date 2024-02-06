@@ -1,48 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.tabla')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
-    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
-</head>
+@section('title', 'Usuarios')
 
-<body>
-    <!-- <ul class="list-group">
+@section('contenido')
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Rol</th>
+            <th>Estado</th>
+            <th>Email</th>
+            <th>Dirección</th>
+            <th>Imagen</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
         @foreach ($usuarios as $usuario)
-        <li class="list-group-item">{{ $usuario->NombreCompleto }}</li>
-        @endforeach
-    </ul> -->
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Correo</th>
-                <th>Telefono</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($usuarios as $usuario)
-            <tr>
-                <td>{{ $usuario->NombreCompleto }}</td>
-                <td>{{ $usuario->NombreUsuario }}</td>
-                <td>{{ $usuario->DNI }}</td>
-                <td>{{ $usuario->Telefono }}</td>
-           
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-</body>
+        <tr>
+            <td>{{ $usuario->NombreCompleto }}</td>
+            <td>{{ $usuario->NombreUsuario }}</td>
+            <td>{{ $usuario->DNI }}</td>
+            <td>{{ $usuario->Telefono }}</td>
+            @if ($usuario->RolID == 1)
+            <td>Concesionario</td>
+            @elseif ($usuario->RolID == 2)
+            <td>Administrativo</td>
+            @elseif ($usuario->RolID == 3)
+            <td>Guardamuelles</td>
+            @elseif ($usuario->RolID == 4)
+            <td>Guardia Civil</td>
+            @endif
+            @if ($usuario->Habilitado == 1)
+            <td>Habilitado</td>
+            @else
+            <td>Deshabilitado</td>
+            @endif
+            <td>{{ $usuario->Email }}</td>
+            <td>{{ $usuario->Direccion }}</td>
+            <td><img src="{{ asset('images/' . $usuario->Imagen) }}" alt=""></td>
+            <td>{{ $usuario->Descripcion }}</td>
 
-</html>
+
+
+
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+
+@endsection
