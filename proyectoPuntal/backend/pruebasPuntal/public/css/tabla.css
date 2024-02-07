@@ -1,0 +1,81 @@
+:root {
+    --wedgewood50: #f5f7fa;
+    --wedgewood100: #eaeff4;
+    --wedgewood200: #d0dce7;
+    --wedgewood300: #a6bed3;
+    --wedgewood500: #4f7796;
+    --wedgewood600: #426787;
+    --wedgewood700: #36536e;
+    --wedgewood950: #1d2834;
+    --regentStBlue300: #add8e6;
+    --regentStBlue950: #162f3b;
+    --gold500: #ffd700;
+    --gold950: #442604;
+    --goldenTainoi300: #ffc745;
+    --goldenTainoi900: #7a2e0d;
+    --titanWhite50: #f5f6fd;
+    --titanWhite900: #3f2d85;
+}
+.tablaEmbarcaciones {
+    padding: 50px;
+}
+
+table {
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+th {
+    background-color: var(--wedgewood600);
+    color: var(--wedgewood50);
+    font-family: "Questrial", sans-serif;
+    /* font-weight: bold; */
+}
+
+.cabeceraTabla {
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.cabeceraDatos>th {
+    background-color: var(--wedgewood300);
+    color: black;
+    font-weight: bold;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td {
+    background-color: var(--wedgewood200);
+}
+
+td {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    text-decoration: none;
+    color: #000000;
+}
+
+.enlaceCreateEmb {
+    display: flex;
+    width: 202px;
+    height: 48px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    background-color: var(--wedgewood600);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    border-radius: 5px;
+    background-image: url(/images/add_solid.svg);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+}
