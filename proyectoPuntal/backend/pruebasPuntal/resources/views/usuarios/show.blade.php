@@ -1,4 +1,4 @@
-@extends('layouts.tabla')
+@extends('layouts.plantilla')
 
 @section('title', $usuario->NombreCompleto)
 
@@ -17,6 +17,7 @@
             <th>Dirección</th>
             <th>Imagen</th>
             <th>Descripción</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -43,5 +44,21 @@
             <td>{{ $usuario->Direccion }}</td>
             <td><img src="{{ asset('images/' . $usuario->Imagen) }}" alt=""></td>
             <td>{{ $usuario->Descripcion }}</td>
+            <td><a href="{{route('usuarios.edit',['usuario'=>$usuario->UsuarioID])}}">EDITAR</a></td>
+            <td>
+
+                <form action="{{route('usuarios.destroy',['usuario'=>$usuario->UsuarioID])}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button onclick='return confirm("¿Desea eliminarlo?")' class='btn btn-secondary btn-sm' type="submit">Eliminar</button>
+                </form>
+            </td>
+
         </tr>
+
+
     </tbody>
+
+</table>
+<a href="{{ route('usuarios.index') }}">Volver a la lista de usuarios</a>
+@endsection

@@ -1,9 +1,16 @@
-@extends('layouts.tabla')
+@extends('layouts.plantilla')
 
 @section('title', 'Usuarios')
 
 @section('contenido')
-<table>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+<h4>CREAR USUARIO</h4>
+<a href="{{ route('usuarios.create') }}">Crear usuario</a>
+<table id="example" class="table table-striped" style="width:100%">
     <thead>
         <tr>
             <th>Nombre</th>
@@ -52,5 +59,9 @@
         @endforeach
     </tbody>
 </table>
-
+<!-- <script type="text/javascript">
+    $(document).ready(function() {
+        new DataTable('#example');
+    });
+</script> -->
 @endsection

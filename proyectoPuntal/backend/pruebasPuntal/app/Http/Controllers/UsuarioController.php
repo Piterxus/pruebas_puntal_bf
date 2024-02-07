@@ -22,7 +22,9 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        $usuario = new Usuario();
+
+        return view('usuarios.create', compact('usuario'));
     }
 
     /**
@@ -30,7 +32,37 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'username' => 'required',
+            'email' => 'required',
+            'telefono' => 'required',
+            'rol' => 'required',
+            'estado' => 'required',
+            'direccion' => 'required',
+            'imagen' => 'nullable|image',
+            'descripcion' => 'required',
+            'dni' => 'required'
+            
+        ]);
+
+        $usuario = new Usuario();
+
+        $usuario->NombreCompleto = $request->nombre;
+        $usuario->NombreUsuario = $request->username;
+        $usuario->Email = $request->email;
+        $usuario->Telefono = $request->telefono;
+        $usuario->RolID = $request->rol;
+        $usuario->Habilitado = $request->estado;
+        $usuario->Direccion = $request->direccion;
+        $usuario->Imagen = $request->imagen;
+        $usuario->Descripcion = $request->descripcion;
+        $usuario->DNI = $request->dni;
+        $usuario->Contraseña = $request->password;
+
+        $usuario->save();
+
+        return redirect()->route('usuarios.index');
     }
 
     /**
@@ -48,7 +80,9 @@ class UsuarioController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $usuario = Usuario::find($id);
+
+        return view('usuarios.edit', compact('usuario'));
     }
 
     /**
@@ -56,7 +90,40 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'username' => 'required',
+            'email' => 'required',
+            'telefono' => 'required',
+            'rol' => 'required',
+            'estado' => 'required',
+            'direccion' => 'required',
+            'imagen' => 'nullable|image',
+            'descripcion' => 'required',
+            'dni' => 'required',
+            'password' => 'required'
+
+
+        ]);
+
+        $usuario = Usuario::find($id);
+
+        $usuario->NombreCompleto = $request->nombre;
+        $usuario->NombreUsuario = $request->username;
+        $usuario->Email = $request->email;
+        $usuario->Telefono = $request->telefono;
+        $usuario->RolID = $request->rol;
+        $usuario->Habilitado = $request->estado;
+        $usuario->Direccion = $request->direccion;
+        $usuario->Imagen = $request->imagen;
+        $usuario->Descripcion = $request->descripcion;
+        $usuario->DNI = $request->dni;
+        $usuario->Contraseña = $request->password;
+
+        $usuario->save();
+
+        return redirect()->route('usuarios.index');
+
     }
 
     /**
@@ -64,6 +131,14 @@ class UsuarioController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $usuario = Usuario::find($id);
+
+        $usuario->delete();
+
+        // if ($usuario->Imagen) {
+        //     unlink(public_path('images/' . $usuario->Imagen));
+        // }
+
+        return redirect()->route('usuarios.index');
     }
 }
