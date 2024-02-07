@@ -15,13 +15,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-1 border  navL">
-                <img src="assets/imgs/layout/logo.svg" alt="Portos de Galicia Logo" class="logoLatNav m-3">
+                <img src="{{asset('/images/layout/logo.svg') }}" alt="Portos de Galicia Logo" class="logoLatNav m-3">
 
 
                 <ul class="nav flex-column  justify-content-center mt-5">
 
                     <li class="nav-item my-4">
-                        <a class="btn control rounded" aria-current="page" href="#">PANEL DE CONTROL</a>
+                        <a class="btn control border rounded" aria-current="page" href="#">PANEL DE CONTROL</a>
                     </li>
                     <li class="nav-item my-4">
                         <a class="btn emb rounded" href="#">GESTIÓN DE EMBARCACIONES</a>
@@ -41,13 +41,13 @@
                         <div class="d-flex  justify-content-center">
                             <h3>¡Hola Pedro!</h3>
                             <a class="navbar-brand" (click)="goToNotifications()">
-                                <img src="assets/imgs/layout/nots.svg" alt="Notification icon" style="width:40px;" class="rounded-pill notIcon">
+                                <img src="{{asset('/images/layout/nots.svg')}}" alt="Notification icon" style="width:40px;" class="rounded-pill notIcon">
                             </a>
                             <a class="navbar-brand" href="#">
-                                <img src="assets/imgs/layout/user.svg" alt="User icon" style="width:40px;" class="rounded-pill userIcon">
+                                <img src="{{asset('/images/layout/user.svg')}}" alt="User icon" style="width:40px;" class="rounded-pill userIcon">
                             </a>
                             <a class="navbar-brand" (click)="logout()">
-                                <img src="assets/imgs/layout/logout.svg" alt="Logout icon" style="width:40px;" class="rounded-pill logoutIcon">
+                                <img src="{{asset('/images/layout/logout.svg')}}" alt="Logout icon" style="width:40px;" class="rounded-pill logoutIcon">
                             </a>
                         </div>
                     </nav>
