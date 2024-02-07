@@ -1,0 +1,126 @@
+    :root {
+        --wedgewood-50: #F5F7FA;
+        --wedgewood-100: #EAEFF4;
+        --wedgewood-500: #4f7796;
+        --wedgewood-700: #36536e;
+    }
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+
+    }
+
+    .container-fluid,
+    .left {
+        min-height: 80vh;
+    }
+
+    .navL {
+        background-color: var(--wedgewood-500);
+    }
+
+    .navR {
+        width: 100%;
+        background-color: var(--wedgewood-50);
+    }
+
+    .contentClass {
+        background-color: var(--wedgewood-100);
+        min-height: 95vh;
+    }
+
+    .btn {
+        color: var(--wedgewood-700);
+        background: var(--wedgewood-50);
+        width: 120px;
+        height: 40px;
+        flex-shrink: 0;
+        border-radius: 2px;
+        border: 1px solid var(--wedgewood-700);
+        font-family: Questrial;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        font-family: 'Questrial', sans-serif;
+        text-align: center;
+        margin-left: 10px;
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        background-position: 5px center;
+        padding-left: 30px;
+    }
+
+    .btn:hover,
+    .btn:focus,
+    .btn:active {
+        background-color: var(--wedgewood-700);
+        color: var(--wedgewood-50);
+    }
+
+    .control {
+        background-image: url(/assets/imgs/layout/control.svg);
+    }
+
+    .control:hover,
+    .control:focus,
+    .control:active {
+        background-image: url(/assets/imgs/layout/controlL.svg);
+    }
+
+    .emb {
+        background-image: url(/assets/imgs/layout/embDark.svg);
+        /* background-color: var(--wedgewood-700);
+        color: var(--wedgewood-50); */
+    }
+
+    .emb:hover,
+    .emb:focus,
+    .emb:active {
+        background-image: url(/assets/imgs/layout/emb.svg);
+    }
+
+    .tran {
+        background-image: url(/assets/imgs/layout/tran.svg);
+    }
+
+    .tran:hover,
+    .tran:focus,
+    .tran:active {
+        background-image: url(/assets/imgs/layout/tranL.svg);
+    }
+
+    .plaza {
+        background-image: url(/assets/imgs/layout/plaza.svg);
+    }
+
+    .plaza:hover,
+    .plaza:focus,
+    .plaza:active {
+        background-image: url(/assets/imgs/layout/plazaL.svg);
+    }
+
+    h3 {
+        font-family: 'Inter', sans-serif;
+    }
+
+
+
+    .logoLatNav {
+        width: 80%;
+        max-width: 150px;
+        /* o el tamaño que desees */
+        display: block;
+        /* Evita que la imagen tenga márgenes inferiores innecesarios */
+        /* margin-right: 10px; */
+        /* Opcional: Agrega un margen inferior si lo deseas */
+        /* transform: translateY(-230%); */
+    }
+
+    .notIcon:hover,
+    .userIcon:hover,
+    .logoutIcon:hover {
+        transform: scale(1.2);
+    }
