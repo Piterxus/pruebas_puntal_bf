@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-<h4>CREAR USUARIO</h4>
+
 <a href="{{ route('usuarios.create') }}">Crear usuario</a>
 <table id="example" class="table table-striped" style="width:100%">
     <thead>
