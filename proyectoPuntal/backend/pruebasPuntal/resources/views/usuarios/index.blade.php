@@ -23,6 +23,7 @@
             <th>Dirección</th>
             <th>Imagen</th>
             <th>Descripción</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -59,9 +60,9 @@
         @endforeach
     </tbody>
 </table>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function() {
         new DataTable('#example');
     });
-</script> -->
+</script>
 @endsection
