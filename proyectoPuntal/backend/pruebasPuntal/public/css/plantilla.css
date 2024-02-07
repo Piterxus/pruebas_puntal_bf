@@ -61,17 +61,18 @@
     }
 
     .control {
-        background-image: url(/assets/imgs/layout/control.svg);
+        background-image: url(/images/layout/control.svg);
+        
     }
 
     .control:hover,
     .control:focus,
     .control:active {
-        background-image: url(/assets/imgs/layout/controlL.svg);
+        background-image: url(/images/layout/controlL.svg);
     }
 
     .emb {
-        background-image: url(/assets/imgs/layout/embDark.svg);
+        background-image: url(/images/layout/embDark.svg);
         /* background-color: var(--wedgewood-700);
         color: var(--wedgewood-50); */
     }
@@ -79,27 +80,27 @@
     .emb:hover,
     .emb:focus,
     .emb:active {
-        background-image: url(/assets/imgs/layout/emb.svg);
+        background-image: url(/images/layout/emb.svg);
     }
 
     .tran {
-        background-image: url(/assets/imgs/layout/tran.svg);
+        background-image: url(/images/layout/tran.svg);
     }
 
     .tran:hover,
     .tran:focus,
     .tran:active {
-        background-image: url(/assets/imgs/layout/tranL.svg);
+        background-image: url(/images/layout/tranL.svg);
     }
 
     .plaza {
-        background-image: url(/assets/imgs/layout/plaza.svg);
+        background-image: url(/images/layout/plaza.svg);
     }
 
     .plaza:hover,
     .plaza:focus,
     .plaza:active {
-        background-image: url(/assets/imgs/layout/plazaL.svg);
+        background-image: url(/images/layout/plazaL.svg);
     }
 
     h3 {

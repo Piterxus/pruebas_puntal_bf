@@ -3,32 +3,30 @@
 @section('title', 'Usuarios')
 
 @section('contenido')
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
-<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
 <h4>CREAR USUARIO</h4>
 <a href="{{ route('usuarios.create') }}">Crear usuario</a>
 <table id="example" class="table table-striped" style="width:100%">
     <thead>
         <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Correo</th>
-            <th>Telefono</th>
-            <th>Rol</th>
-            <th>Estado</th>
-            <th>Email</th>
-            <th>Dirección</th>
-            <th>Imagen</th>
-            <th>Descripción</th>
-            <th>Acciones</th>
+            <th style="display: none;">ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Email</th>
+                <th>Dirección</th>
+                <th>Imagen</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($usuarios as $usuario)
         <tr>
+            <td style="display: none;">{{ $usuario->id }}</td>
             <td>{{ $usuario->NombreCompleto }}</td>
             <td>{{ $usuario->NombreUsuario }}</td>
             <td>{{ $usuario->DNI }}</td>
@@ -61,8 +59,23 @@
     </tbody>
 </table>
 <script type="text/javascript">
+    // $(document).ready(function() {
+    //     new DataTable('#example');
+    // });
+
     $(document).ready(function() {
-        new DataTable('#example');
+        var dataTable = $('#example').DataTable();
+
+        $('#example tbody').on('click', 'tr', function() {
+            // Obtener el nodo de la celda que contiene el enlace "VER"
+            var cell = $(this).find('td:eq(0)'); // Cambia 0 por el índice de la columna que contiene el ID
+
+            // Obtener el contenido de la celda (que debería ser el ID)
+            var userId = cell.text();
+
+            // Redirigir a la ruta usuarios.show con el ID del usuario
+            window.location.href = "{{ url('usuarios') }}/" + userId;
+        });
     });
 </script>
 @endsection
