@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Questrial&display=swap');
 :root {
     --wedgewood50: #f5f7fa;
     --wedgewood100: #eaeff4;
@@ -34,6 +36,7 @@ th {
 .cabeceraTabla {
     font-size: 30px;
     font-weight: lighter;
+    
 }
 
 .cabeceraDatos>th {

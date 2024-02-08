@@ -13,7 +13,7 @@
         <thead>
             <tr>
                 <th [attr.colspan]="12" class="cabeceraTabla">
-                    EMBARCACIONES
+                    USUARIOS
                 </th>
             </tr>
             <tr class="cabeceraDatos">
