@@ -56,7 +56,7 @@
                 <td>{{ $usuario->Email }}</td>
                 <td>{{ $usuario->Direccion }}</td>
                 <td><img src="{{ asset('images/' . $usuario->Imagen) }}" alt=""></td>
-                <td>{{ $usuario->Descripcion }}</td>
+                <td class="text-truncate">{{ $usuario->Descripcion }}</td>
                 <td><a href="{{route('usuarios.show',['usuario'=>$usuario->UsuarioID])}}">VER</a></td>
 
 
