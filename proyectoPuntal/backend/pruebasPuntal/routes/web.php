@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\UsuarioController;
-
+use App\Http\Controllers\InstalacionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,4 @@ Route::get('/', function () {
 });
 Route::post('/login', [LoginController::class, 'login']);
 Route::resource('usuarios', UsuarioController::class);
+Route::resource('instalaciones', InstalacionController::class);
